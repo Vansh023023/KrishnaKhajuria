@@ -1,3 +1,12 @@
+import subprocess
+from fastapi import FastAPI
+from database.ia_filterdb import get_search_results
+
+app = FastAPI()
+
+@app.on_event("startup")
+def start_bot():
+    subprocess.Popen(["python", "bot.py"])
 from fastapi import FastAPI
 from database.ia_filterdb import get_search_results
 
